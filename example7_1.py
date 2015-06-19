@@ -1,4 +1,4 @@
-class Human:
+class Human(object):
 	name=None;
 	sex=None;
 	birth_year=None;
@@ -30,8 +30,19 @@ class Human:
 	def say(self, message):
 		return self.name + ' says: "' + message + '".'
 			
-class Student:
-	pass
+class Student(Human):
+	university=None;
+	marks=[];
+	
+	def __init__(self, name, year, university, marks, mother=None, father=None):
+		super(Student, self).__init__(name, year, mother, father)
+		self.university=university
+		self.marks=marks
+	
+	def average_mark(self, marks):
+		if len(self.marks):
+			return 1.0*sum(self.marks)/len(self.marks)
+		return 0
 
 sasha=Human("Olexandr", 1963);
 sveta=Human("Svitlana", 1964);
