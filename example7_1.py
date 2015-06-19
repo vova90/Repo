@@ -29,8 +29,7 @@ class Human(object):
 	
 	def say(self, message):
 		return self.name + ' says: "' + message + '".'
-		
-		
+			
 class Student(Human):
 	university=None;
 	marks=[];
@@ -40,32 +39,11 @@ class Student(Human):
 		self.university=university
 		self.marks=marks
 	
-	def average_mark(self):
+	def average_mark(self, marks):
 		if len(self.marks):
 			return 1.0*sum(self.marks)/len(self.marks)
 		return 0
-		
-	def has_grunt(self):
-		return True
 
-
-class Student_KPI(Student):
-		
-	def __init__(self, name, year, marks):
-		super(Student_KPI, self).__init__(name, year, "KPI", marks)
-
-	def has_grunt(self):
-		return self.average_mark() >= 4
-
-			
-class Student_KNU(Student):
-	
-	def __init__(self, name, year, marks):
-		super(Student_KNU, self).__init__(name, year, "KNU", marks)
-		
-	def has_grunt(self):
-		return min(self.marks) >= 4
-	
 sasha=Human("Olexandr", 1963);
 sveta=Human("Svitlana", 1964);
 vova=Human("Volodymyr", 1990, sveta, sasha);
