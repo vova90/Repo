@@ -1,3 +1,5 @@
+package Repo;
+
 public abstract class AbstractCar {
 
     protected String name = "Abstract car";
